@@ -2,6 +2,7 @@ import view
 import model
 import text
 
+
 def start():
     while True:
         select = view.menu()
@@ -28,18 +29,25 @@ def start():
                 view.show_contacts(result, text.empty_search(word))
             case 6:
                 word = view.search_word()
-                result = model.search(word)
-                view.show_contacts(result, text.empty_search(word))
-                index = view.changed_contact()
-                # model.change_contact(index)
-                view.print_message(text.changed_contact)
-
+                search_word = model.search(word)
+                view.show_contacts(search_word, text.empty_search(word))
+                index = view.input_change_id()
+                new = view.change_contact()
+                result = model.change_contact(index, new)
+                if result:
+                    view.print_message(text.change_successful(result))
+                else:
+                    view.print_message(text.error_changed)
             case 7:
                 word = view.search_word()
-                result = model.search(word)
-                view.show_contacts(result, text.empty_search(word))
-
-                view.print_message(text.deleted_contact)
+                search_word = model.search(word)
+                view.show_contacts(search_word, text.empty_search(word))
+                index = view.input_del_id()
+                result = model.remove_contact(index)
+                if result:
+                    view.print_message(text.del_successful(result))
+                else:
+                    view.print_message(text.error_deleted)
             case 8:
                 view.print_message(text.exit_message)
                 break

@@ -48,14 +48,21 @@ def add_contact():
         new[key] = input(value)
     return new
 
+
 def search_word() -> str:
     return input(text.search_word)
 
-def changed_contact():
-    index = input(text.input_chgindex)
+
+def change_contact():
     new = {}
     for key, value in text.new_contact.items():
-        new[index] = input(value)
+        new[key] = input(value)
     return new
-def input_delindex() -> str:
-    return input(text.input_delindex)
+
+
+def input_change_id():
+    return str(input(text.input_chgindex))
+
+
+def input_del_id():
+    return int(input(text.input_delindex))

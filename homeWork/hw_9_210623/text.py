@@ -24,7 +24,6 @@ error_load = 'Ошибка загрузки телефонной книги!'
 error_save = 'Ошибка сохранения телефонной книги!'
 
 
-
 def add_successful(name: str) -> str:
     return f'Контакт {name} успешно добавлен в книгу!'
 
@@ -35,11 +34,22 @@ search_word = 'Введите строку для поиска: '
 def empty_search(word: str) -> str:
     return f'Контакты содержащие {word} не найдены'
 
+
 input_chgindex = 'Введите ID контакта, который хотите изменить: '
 input_delindex = 'Введите ID контакта, который хотите удалить: '
 
 changed_contact = 'Контакт успешно изменен'
 
 deleted_contact = 'Контакт успешно удален'
+error_deleted = 'Ошибка удаления, запись с указанным номером отсутствует в телефонной книге!'
+error_changed = 'Ошибка изменения, запись с указанным номером отсутствует в телефонной книге!'
 
 exit_message = 'До новых встреч!'
+
+
+def del_successful(name: str) -> str:
+    return f'Контакт {name} успешно удален из книги!'
+
+
+def change_successful(name: str) -> str:
+    return f'Контакт {name} успешно изменен!'

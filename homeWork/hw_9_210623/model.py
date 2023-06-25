@@ -33,7 +33,7 @@ def search(word: str) -> dict[int:dict[str, str]]:
 
 def check_id():
     if phone_book:
-        return max(phone_book) + 1
+        return max(list(map(int, phone_book))) + 1
     return 1
 
 
@@ -41,6 +41,15 @@ def add_contact(new: {int: dict[str, str]}):
     contact = {check_id(): new}
     phone_book.update(contact)
 
-def change_contact(new: {int: dict[str, str]}):
-    contact = {check_id(): new}
-    phone_book.update(contact)
+
+def change_contact(index, new: {int: dict[str, str]}):
+    if index.isdigit() and int(index) in list(map(int, phone_book)):
+        contact = {index: new}
+        phone_book.update(contact)
+        return new.get('name')
+
+
+def remove_contact(index):
+    if str(index).isdigit() and index in list(map(int, phone_book)):
+        name = phone_book.pop(str(index))
+        return name.get('name')
