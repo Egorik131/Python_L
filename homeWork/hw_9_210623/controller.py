@@ -27,9 +27,19 @@ def start():
                 result = model.search(word)
                 view.show_contacts(result, text.empty_search(word))
             case 6:
-                pass
+                word = view.search_word()
+                result = model.search(word)
+                view.show_contacts(result, text.empty_search(word))
+                index = view.changed_contact()
+                # model.change_contact(index)
+                view.print_message(text.changed_contact)
+
             case 7:
-                pass
+                word = view.search_word()
+                result = model.search(word)
+                view.show_contacts(result, text.empty_search(word))
+
+                view.print_message(text.deleted_contact)
             case 8:
                 view.print_message(text.exit_message)
                 break

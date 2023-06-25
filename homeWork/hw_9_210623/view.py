@@ -50,3 +50,12 @@ def add_contact():
 
 def search_word() -> str:
     return input(text.search_word)
+
+def changed_contact():
+    index = input(text.input_chgindex)
+    new = {}
+    for key, value in text.new_contact.items():
+        new[index] = input(value)
+    return new
+def input_delindex() -> str:
+    return input(text.input_delindex)

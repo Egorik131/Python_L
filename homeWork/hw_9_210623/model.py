@@ -40,3 +40,7 @@ def check_id():
 def add_contact(new: {int: dict[str, str]}):
     contact = {check_id(): new}
     phone_book.update(contact)
+
+def change_contact(new: {int: dict[str, str]}):
+    contact = {check_id(): new}
+    phone_book.update(contact)
