@@ -61,5 +61,3 @@
 #
 #
 # print_operation_table(lambda x, y: x * y)
-
-
