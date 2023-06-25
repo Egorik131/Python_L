@@ -21,8 +21,6 @@ a.spoiler = 'Big and Black'
 print(a.spoiler)
 print(b.spoiler)
 
-Книги.
-https://t.me/dirty_python/221
 
 print(a)
 print(b)
