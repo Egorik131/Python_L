@@ -5,7 +5,7 @@ class Car:
         self.name = name
         self.color = color
         self.year = year
-        self.spoiler = None //
+        self.spoiler = None
 
     def __str__(self):
         return f'авто {self.name}, цвет {self.color} и {self.year} год выпуска'
